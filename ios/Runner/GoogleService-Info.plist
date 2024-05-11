@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyB7359svKkY4IRi6UA6D2rcAuQUI0Zhs8c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>421401808624</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.hospitalstaffmangement</string>
+	<key>PROJECT_ID</key>
+	<string>hospital-staff-management</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hospital-staff-management.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:421401808624:ios:4c64186fddc34a3e853c35</string>
+</dict>
+</plist>
