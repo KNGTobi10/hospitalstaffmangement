@@ -1,10 +1,10 @@
 # Hospital Staff Management 
 
-A new Flutter project.
+The Hospital Staff Management project.
 
 ## Getting Started
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+This projects is built to run on the Flutter _stable_ release.
 
 The Hospital Staff Management App aims to streamline the process of managing hospital staff shifts and payments. 
 It addresses the common challenges faced by healthcare facilities in scheduling and allocating shifts for nurses and other staff members. 
