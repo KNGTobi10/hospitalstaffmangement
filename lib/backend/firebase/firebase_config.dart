@@ -5,10 +5,10 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
-            apiKey: "AIzaSyBOafeSym3a1PempZ5I2ksiJi6LB7iraHI",
+            apiKey: "",
             authDomain: "hospital-staff-management.firebaseapp.com",
-            projectId: "hospital-staff-management",
-            storageBucket: "hospital-staff-management.appspot.com",
+            projectId: "",
+            storageBucket: "",
             messagingSenderId: "421401808624",
             appId: "1:421401808624:web:31409f46eb3ad8c9853c35"));
   } else {
