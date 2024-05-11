@@ -1,0 +1,166 @@
+import 'dart:async';
+
+import 'package:collection/collection.dart';
+
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
+import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+
+class HopshiftRecord extends FirestoreRecord {
+  HopshiftRecord._(
+    super.reference,
+    super.data,
+  ) {
+    _initializeFields();
+  }
+
+  // "startTime" field.
+  DateTime? _startTime;
+  DateTime? get startTime => _startTime;
+  bool hasStartTime() => _startTime != null;
+
+  // "endTime" field.
+  DateTime? _endTime;
+  DateTime? get endTime => _endTime;
+  bool hasEndTime() => _endTime != null;
+
+  // "jobTitle" field.
+  String? _jobTitle;
+  String get jobTitle => _jobTitle ?? '';
+  bool hasJobTitle() => _jobTitle != null;
+
+  // "employee" field.
+  DocumentReference? _employee;
+  DocumentReference? get employee => _employee;
+  bool hasEmployee() => _employee != null;
+
+  // "paymentamount" field.
+  double? _paymentamount;
+  double get paymentamount => _paymentamount ?? 0.0;
+  bool hasPaymentamount() => _paymentamount != null;
+
+  // "date" field.
+  DateTime? _date;
+  DateTime? get date => _date;
+  bool hasDate() => _date != null;
+
+  // "jobdescription" field.
+  String? _jobdescription;
+  String get jobdescription => _jobdescription ?? '';
+  bool hasJobdescription() => _jobdescription != null;
+
+  // "responsibility" field.
+  String? _responsibility;
+  String get responsibility => _responsibility ?? '';
+  bool hasResponsibility() => _responsibility != null;
+
+  DocumentReference get parentReference => reference.parent.parent!;
+
+  void _initializeFields() {
+    _startTime = snapshotData['startTime'] as DateTime?;
+    _endTime = snapshotData['endTime'] as DateTime?;
+    _jobTitle = snapshotData['jobTitle'] as String?;
+    _employee = snapshotData['employee'] as DocumentReference?;
+    _paymentamount = castToType<double>(snapshotData['paymentamount']);
+    _date = snapshotData['date'] as DateTime?;
+    _jobdescription = snapshotData['jobdescription'] as String?;
+    _responsibility = snapshotData['responsibility'] as String?;
+  }
+
+  static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
+      parent != null
+          ? parent.collection('hopshift')
+          : FirebaseFirestore.instance.collectionGroup('hopshift');
+
+  static DocumentReference createDoc(DocumentReference parent, {String? id}) =>
+      parent.collection('hopshift').doc(id);
+
+  static Stream<HopshiftRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => HopshiftRecord.fromSnapshot(s));
+
+  static Future<HopshiftRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => HopshiftRecord.fromSnapshot(s));
+
+  static HopshiftRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      HopshiftRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
+
+  static HopshiftRecord getDocumentFromData(
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      HopshiftRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'HopshiftRecord(reference: ${reference.path}, data: $snapshotData)';
+
+  @override
+  int get hashCode => reference.path.hashCode;
+
+  @override
+  bool operator ==(other) =>
+      other is HopshiftRecord &&
+      reference.path.hashCode == other.reference.path.hashCode;
+}
+
+Map<String, dynamic> createHopshiftRecordData({
+  DateTime? startTime,
+  DateTime? endTime,
+  String? jobTitle,
+  DocumentReference? employee,
+  double? paymentamount,
+  DateTime? date,
+  String? jobdescription,
+  String? responsibility,
+}) {
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'startTime': startTime,
+      'endTime': endTime,
+      'jobTitle': jobTitle,
+      'employee': employee,
+      'paymentamount': paymentamount,
+      'date': date,
+      'jobdescription': jobdescription,
+      'responsibility': responsibility,
+    }.withoutNulls,
+  );
+
+  return firestoreData;
+}
+
+class HopshiftRecordDocumentEquality implements Equality<HopshiftRecord> {
+  const HopshiftRecordDocumentEquality();
+
+  @override
+  bool equals(HopshiftRecord? e1, HopshiftRecord? e2) {
+    return e1?.startTime == e2?.startTime &&
+        e1?.endTime == e2?.endTime &&
+        e1?.jobTitle == e2?.jobTitle &&
+        e1?.employee == e2?.employee &&
+        e1?.paymentamount == e2?.paymentamount &&
+        e1?.date == e2?.date &&
+        e1?.jobdescription == e2?.jobdescription &&
+        e1?.responsibility == e2?.responsibility;
+  }
+
+  @override
+  int hash(HopshiftRecord? e) => const ListEquality().hash([
+        e?.startTime,
+        e?.endTime,
+        e?.jobTitle,
+        e?.employee,
+        e?.paymentamount,
+        e?.date,
+        e?.jobdescription,
+        e?.responsibility
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is HopshiftRecord;
+}
